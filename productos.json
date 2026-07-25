@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Martillo de acero 500g",
+        "categoria": "herramientas",
+        "precio": 350,
+        "img": "assets/img/martillo.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Destornillador plano 6x100mm",
+        "categoria": "herramientas",
+        "precio": 180,
+        "img": "assets/img/destornillador.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Cable eléctrico 2.5mm (metro)",
+        "categoria": "electricos",
+        "precio": 45,
+        "img": "assets/img/cable.jpg"
+    }
+]
