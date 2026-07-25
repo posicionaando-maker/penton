@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-CU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería [Tu Nombre] - Matanzas</title>
+    
+    <!-- Meta tags para compartir en redes sociales -->
+    <meta property="og:title" content="Ferretería [Tu Nombre] - Matanzas">
+    <meta property="og:description" content="Encuentra todo para tu hogar y construcción. ¡Consúltenos por WhatsApp!">
+    <meta property="og:image" content="assets/img/logo-ferreteria.jpg">
+    
+    <!-- PWA: Permite que la página se guarde en el teléfono y funcione offline -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER: Logo + Datos de contacto -->
+    <header>
+        <div class="logo">
+            <h1>🔧 Ferretería [Tu Nombre]</h1>
+            <p>Matanzas - Tu hogar, nuestra prioridad</p>
+        </div>
+        <div class="contacto-rapido">
+            <a href="https://wa.me/53XXXXXXXXX?text=Hola!%20Vi%20el%20catálogo%20online" target="_blank">
+                📱 WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- BUSCADOR (para encontrar productos rápido) -->
+    <section class="buscador">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar productos...">
+    </section>
+
+    <!-- CATEGORÍAS + FILTROS -->
+    <nav class="categorias">
+        <button class="cat-btn active" data-categoria="todos">Todos</button>
+        <button class="cat-btn" data-categoria="herramientas">🔨 Herramientas</button>
+        <button class="cat-btn" data-categoria="electricos">⚡ Eléctricos</button>
+        <button class="cat-btn" data-categoria="fontaneria">🚰 Fontanería</button>
+        <button class="cat-btn" data-categoria="pinturas">🎨 Pinturas</button>
+        <button class="cat-btn" data-categoria="construccion">🧱 Construcción</button>
+    </nav>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <main id="catalogo">
+        <!-- Los productos se renderizan desde JS con los datos de productos.json -->
+    </main>
+
+    <!-- CARRITO FLOTANTE -->
+    <div class="carrito-flotante" id="carrito">
+        <button id="toggleCarrito">🛒 <span id="contadorCarrito">0</span></button>
+        <div class="carrito-contenido" id="carritoContenido">
+            <h3>Tu Pedido</h3>
+            <ul id="listaCarrito"></ul>
+            <div class="total">Total: <span id="totalCarrito">$0.00</span></div>
+            <button id="enviarWhatsApp" class="btn-whatsapp">📱 Enviar Pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📍 Matanzas, Cuba | 📞 5X XXXXXXX | 🕒 L-V 8am-6pm, S 8am-1pm</p>
+        <p>© 2026 Ferretería [Tu Nombre] - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
