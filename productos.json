@@ -19,5 +19,12 @@
         "categoria": "electricos",
         "precio": 45,
         "img": "assets/img/cable.jpg"
-    }
+    },
+    
+   {
+    "id": 3,
+        "nombre": "Cable eléctrico 2.5mm (metro)",
+        "categoria": "electricos",
+        "precio": 45
+   }    
 ]
