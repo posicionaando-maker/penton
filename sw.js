@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ferreteria-v1';
+const CACHE_NAME = 'ferreteria-v2';
 const ARCHIVOS = [
     '/',
     '/index.html',
