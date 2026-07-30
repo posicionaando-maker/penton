@@ -8,10 +8,10 @@
     },
     {
         "id": 2,
-        "nombre": "Destornillador plano 6x100mm",
-        "categoria": "herramientas",
-        "precio": 180,
-        "img": "assets/img/destornillador.jpg"
+        "nombre": "Bape",
+        "categoria": "Tenis",
+        "precio": 18000,
+        "img": "assets/img/bape.jpg"
     },
     {
         "id": 3,
