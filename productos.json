@@ -18,14 +18,6 @@
         "nombre": "Cable eléctrico 2.5mm (metro)",
         "categoria": "electricos",
         "precio": 45,
-        "img": "assets/img/airforceonenikeblanco.jpg"
-    },
-    
-   {
-    "id": 4,
-        "nombre": "Cable eléctrico 2.5mm (metro)",
-        "categoria": "electricos",
-        "precio": 45,
-       "img": "assets/img/airforceonenikeblanco.jpg"
-   }   
+        "img": "assets/img/cable-electrico.jpg"
+    }
 ]
