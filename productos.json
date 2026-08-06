@@ -15,9 +15,9 @@
     },
     {
         "id": 3,
-        "nombre": "Cable eléctrico 2.5mm (metro)",
-        "categoria": "electricos",
-        "precio": 45,
-        "img": "assets/img/cable-electrico.jpg"
+        "nombre": "Vestido de salir con franjas",
+        "categoria": "Vestidos",
+        "precio": 4500,
+        "img": "assets/img/Vestido_de_salir_franjas.png"
     }
 ]
