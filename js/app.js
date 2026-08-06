@@ -14,6 +14,7 @@ const totalCarrito = document.getElementById('totalCarrito');
 const toggleCarritoBtn = document.getElementById('toggleCarrito');
 const carritoContenido = document.getElementById('carritoContenido');
 const enviarWhatsAppBtn = document.getElementById('enviarWhatsApp');
+const categoriasContainer = document.getElementById('categoriasContainer');
 
 // ======== CARGAR PRODUCTOS DESDE JSON ========
 async function cargarProductos() {
@@ -37,12 +38,67 @@ async function cargarProductos() {
         
         productos = datos;
         console.log('✅ Productos cargados correctamente:', productos.length, 'productos');
+        
+        // Generar categorías dinámicamente
+        generarCategorias();
+        
+        // Renderizar productos
         renderizarProductos();
         
     } catch (error) {
         console.error('❌ Error al cargar productos:', error);
         mostrarError(`Error al cargar productos: ${error.message}`);
     }
+}
+
+// ======== GENERAR CATEGORÍAS DINÁMICAMENTE ========
+function generarCategorias() {
+    if (!categoriasContainer) {
+        console.error('❌ Contenedor de categorías no encontrado');
+        return;
+    }
+    
+    // Obtener categorías únicas de los productos
+    const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+    
+    // Ordenar alfabéticamente
+    categoriasUnicas.sort();
+    
+    // Crear HTML de categorías
+    let html = `<button class="cat-btn active" data-categoria="todos">📋 Todos</button>`;
+    
+    // Agregar emojis según categoría (opcional)
+    const emojis = {
+        'herramientas': '🔨',
+        'electricos': '⚡',
+        'fontaneria': '🚰',
+        'pinturas': '🎨',
+        'construccion': '🧱',
+        'tenis': '👟',
+        'vestidos': '👗',
+        'accesorios': '💎',
+        'hogar': '🏠',
+        'jardin': '🌿'
+    };
+    
+    categoriasUnicas.forEach(categoria => {
+        const emoji = emojis[categoria.toLowerCase()] || '📌';
+        html += `<button class="cat-btn" data-categoria="${categoria}">${emoji} ${categoria.charAt(0).toUpperCase() + categoria.slice(1)}</button>`;
+    });
+    
+    categoriasContainer.innerHTML = html;
+    
+    // Agregar event listeners a los nuevos botones
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            categoriaActual = this.dataset.categoria;
+            renderizarProductos(categoriaActual, searchInput ? searchInput.value : "");
+        });
+    });
+    
+    console.log('✅ Categorías generadas:', categoriasUnicas);
 }
 
 // ======== MOSTRAR ERROR EN CATÁLOGO ========
@@ -202,16 +258,6 @@ function enviarPedidoWhatsApp() {
 }
 
 // ======== EVENT LISTENERS ========
-// Configurar categorías
-document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        categoriaActual = this.dataset.categoria;
-        renderizarProductos(categoriaActual, searchInput ? searchInput.value : "");
-    });
-});
-
 // Configurar búsqueda
 if (searchInput) {
     searchInput.addEventListener('input', function() {
