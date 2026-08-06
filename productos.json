@@ -20,9 +20,11 @@
         "precio": 4500,
         "img": "assets/img/vestidodesalirfranjas.png"
     },
+    {
     "id": 4,
         "nombre": "Juego de pantalon y blusa",
         "categoria": "Juegos de mujer",
         "precio": 4500,
         "img": "assets/img/juegodepantalonblusa.png"
+    }
 ]
